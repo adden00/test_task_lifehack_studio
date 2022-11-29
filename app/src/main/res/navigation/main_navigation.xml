@@ -9,16 +9,29 @@
         android:id="@+id/splashFragment"
         android:name="com.example.testlifehackstudio.presentation.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/action_splashFragment_to_usersListFragment"
-            app:destination="@id/usersListFragment"
+            android:id="@+id/action_splashFragment_to_companiesListFragment"
+            app:destination="@id/companiesListFragment"
             app:popUpTo="@id/main_navigation"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/usersListFragment"
-        android:name="com.example.testlifehackstudio.presentation.user_list.UsersListFragment"
-        android:label="fragment_users_list"
-        tools:layout="@layout/fragment_users_list" />
+        android:id="@+id/companiesListFragment"
+        android:name="com.example.testlifehackstudio.presentation.company_list.CompaniesListFragment"
+        android:label="fragment_companies_list"
+        tools:layout="@layout/fragment_companies_list">
+        <action
+            android:id="@+id/action_companiesListFragment_to_companyPageFragment"
+            app:destination="@id/companyPageFragment">
+            <argument
+                android:name="user_id"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/companyPageFragment"
+        android:name="com.example.testlifehackstudio.presentation.company_page.CompanyPageFragment"
+        android:label="fragment_company_page"
+        tools:layout="@layout/fragment_company_page" />
 </navigation>

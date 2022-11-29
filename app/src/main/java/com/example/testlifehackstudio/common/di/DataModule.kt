@@ -1,9 +1,9 @@
 package com.example.testlifehackstudio.common.di
 
-import com.example.data.network.UsersApiClient
-import com.example.data.network.UsersApiService
-import com.example.data.repository.UsersRepositoryImplementation
-import com.example.domain.repository.UsersRepository
+import com.example.data.network.CompaniesApiClient
+import com.example.data.network.CompaniesApiService
+import com.example.data.repository.CompaniesRepositoryImplementation
+import com.example.domain.repository.CompaniesRepository
 import com.example.testlifehackstudio.common.constants.Constants
 import dagger.Module
 import dagger.Provides
@@ -14,23 +14,23 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-@InstallIn (SingletonComponent::class)
+@InstallIn(SingletonComponent::class)
 object DataModule {
     @Provides
     @Singleton
-    fun provideApiClient(): UsersApiClient {
-        return Retrofit.Builder().baseUrl(Constants.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build().create(UsersApiClient::class.java)
+    fun provideApiClient(): CompaniesApiClient {
+        return Retrofit.Builder().baseUrl(Constants.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create()).build()
+            .create(CompaniesApiClient::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideNetworkService(api: UsersApiClient) = UsersApiService(api)
+    fun provideNetworkService(api: CompaniesApiClient) = CompaniesApiService(api)
 
     @Provides
     @Singleton
-    fun provideUsersRepo(networkService: UsersApiService): UsersRepository {
-        return UsersRepositoryImplementation(networkService)
+    fun provideCompaniesRepo(networkService: CompaniesApiService): CompaniesRepository {
+        return CompaniesRepositoryImplementation(networkService)
     }
-
-
 }

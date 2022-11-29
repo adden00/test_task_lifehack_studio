@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="20dp"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,10 +22,10 @@
             app:cardElevation="0dp">
 
             <ImageView
-                android:id="@+id/imUserImage"
+                android:id="@+id/imCompanyImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contentDescription="@string/user_pic"
+                android:contentDescription="@string/company_pic"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </androidx.cardview.widget.CardView>
@@ -37,6 +37,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="@string/user_name" />
+            android:text="@string/company_name" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

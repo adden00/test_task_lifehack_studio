@@ -1,6 +1,6 @@
-package com.example.data.models
+package com.example.domain.models
 
-data class UserModelItem(
+data class CompanyModelItem(
     val description: String,
     val id: String,
     val img: String,

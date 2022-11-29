@@ -9,11 +9,11 @@ import com.example.testlifehackstudio.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class SplashFragment: Fragment(R.layout.fragment_splash) {
+class SplashFragment : Fragment(R.layout.fragment_splash) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         lifecycleScope.launch {
             delay(2000)
-            findNavController().navigate(R.id.action_splashFragment_to_usersListFragment)
+            findNavController().navigate(R.id.action_splashFragment_to_companiesListFragment)
         }
     }
 }
